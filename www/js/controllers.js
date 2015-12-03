@@ -9,17 +9,17 @@ angular.module('starter.controllers', [])
 
   $scope.info = "Hola";
 
+  var fbLoginSuccess = function (userData) {
+    $scope.info = "UserInfo: " + JSON.stringify(userData);
+  }
+
   $scope.login = function(){
-    if (!window.cordova) { 
-      facebookConnectPlugin.browserInit(APP-ID); 
-    } 
-    facebookConnectPlugin.login([], 
-      function (response) { 
-        $scope.login = (JSON.stringify(response)) 
-    }, function (response) 
-    { 
-      $scope.login = (JSON.stringify(response)) 
-    });//fbLoginSuccess, fbLoginError);
+
+    facebookConnectPlugin.login(["public_profile"],
+        fbLoginSuccess,
+        function (error) { $scope.info = "" + error }
+    );
+
   }
 
 });
