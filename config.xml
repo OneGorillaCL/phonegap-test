@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <widget id="com.ionicframework.fbconnect149380" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:gap="http://phonegap.com/ns/1.0">
-  <name>Test 1G APP</name>
+  <name>Facebook Connect</name>
   <description>
         Pruebas OneGorilla
     </description>
   <author email="jaime@onegorilla.cl" href="http://onegorilla.cl/">
-      Ionic Framework Team
+      OneGorilla
     </author>
-  <gap:plugin name="com.phonegap.plugins.facebookconnect">
+
+  <gap:plugin name="com.phonegap.plugins.facebookconnect" source="pgb" spec="0.9.0">
     <param name="APP_ID" value="573670422785928" />
     <param name="APP_NAME" value="phonegap-test" />
   </gap:plugin>
+
   <content src="index.html"/>
   <access origin="*"/>
   <preference name="webviewbounce" value="false"/>
