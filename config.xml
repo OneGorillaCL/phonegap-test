@@ -8,10 +8,10 @@
       OneGorilla
     </author>
 
-  <gap:plugin name="cordova-plugin-googleplus" source="npm">
-    <param name="REVERSED_CLIENT_ID" value="android:com.ionicframework.fbconnect149380" />
+  <gap:plugin name="cordova-plugin-googleplus" source="npm" spec="4.0.6">
+    <param name="REVERSED_CLIENT_ID" value="com.ionicframework.fbconnect149380" />
   </gap:plugin>
-    
+
   <content src="index.html"/>
   <access origin="*"/>
   <preference name="webviewbounce" value="false"/>
