@@ -7,10 +7,12 @@ angular.module('starter.controllers', [])
 
 .controller('AppCtrlInicio', function($scope) {
 
-  $scope.info = "Hola";
+  $scope.info = "";
+  $scope.loginEstado = false;
 
   var fbLoginSuccess = function (userData) {
     $scope.info = "UserInfo: " + JSON.stringify(userData);
+    $scope.loginEstado = true;
   }
 
   $scope.login = function(){
@@ -20,6 +22,16 @@ angular.module('starter.controllers', [])
         function (error) { $scope.info = "" + error }
     );
 
+  }
+
+
+  $scope.logout = function(){
+    facebookConnectPlugin.logout(function(){
+      $scope.loginEstado = false;
+      $scope.info = "";
+    }, function(error){
+
+    })  
   }
 
 });
