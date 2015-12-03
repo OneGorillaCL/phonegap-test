@@ -7,7 +7,7 @@
   <author email="jaime@onegorilla.cl" href="http://onegorilla.cl/">
       OneGorilla
     </author>
-
+  <preference name="android-build-tool" value="gradle" /> 
   <gap:plugin name="org.apache.cordova.device" version="0.2.12" />
   <gap:plugin name="cordova-plugin-googleplus" source="npm" spec="4.0.6">
     <param name="REVERSED_CLIENT_ID" value="com.ionicframework.fbconnect149380" />
