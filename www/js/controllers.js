@@ -5,7 +5,7 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('AppCtrlInicio', function($scope,$compile) {
+.controller('AppCtrlInicio', function($scope, $ionicLoading, $compile) {
 
       function initialize() {
         var myLatlng = new google.maps.LatLng(43.07493,-89.381388);
