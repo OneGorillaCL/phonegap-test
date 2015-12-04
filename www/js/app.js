@@ -41,6 +41,15 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     }
   });
+
+  .state('app.inicio', {
+    url: '/home',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/inicio.html'
+      }
+    }
+  });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/home');
+  $urlRouterProvider.otherwise('/app/inicio');
 });
