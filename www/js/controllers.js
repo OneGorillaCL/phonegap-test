@@ -13,10 +13,10 @@ angular.module('starter.controllers', [])
   var mapDiv = document.getElementById("map_canvas");
 
   // Initialize the map plugin
-  var map = plugin.google.maps.Map.getMap(mapDiv);
+  var map = mainMap.Map.getMap(mapDiv);
 
   // You have to wait the MAP_READY event.
-  map.on(plugin.google.maps.event.MAP_READY, onMapInit);
+  map.on(mainMap.event.MAP_READY, onMapInit);
 
   var onMapInit = function(map) {
     $scope.info = "Mapa Cargado";
