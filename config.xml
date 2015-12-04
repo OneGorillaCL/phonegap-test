@@ -8,7 +8,9 @@
     OneGorilla
   </author>
 
-  <gap:plugin name="cordova-plugin-googlemaps" source="npm" />
+  <gap:plugin name="cordova-plugin-googlemaps" source="npm">
+    <param name="API_KEY_FOR_ANDROID" value="AIzaSyAkh1i9m60rM4k0j4Pc72Yxj1EvXjZcx3o" />
+  </gap:plugin>
 
   <content src="index.html"/>
   <access origin="*"/>
