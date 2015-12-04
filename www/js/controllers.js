@@ -9,18 +9,5 @@ angular.module('starter.controllers', [])
 
   $scope.info = "Hola";
 
-  $scope.login = function(){
-    if (!window.cordova) { 
-      facebookConnectPlugin.browserInit(APP-ID); 
-    } 
-    facebookConnectPlugin.login([], 
-      function (response) { 
-        $scope.login = (JSON.stringify(response)) 
-    }, function (response) 
-    { 
-      $scope.login = (JSON.stringify(response)) 
-    });//fbLoginSuccess, fbLoginError);
-  }
-
 });
 
