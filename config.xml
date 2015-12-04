@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <widget id="com.ionicframework.fbconnect149380" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:gap="http://phonegap.com/ns/1.0">
-  <name>Test 1G APP</name>
+  <name>Google Maps</name>
   <description>
         Pruebas OneGorilla
     </description>
   <author email="jaime@onegorilla.cl" href="http://onegorilla.cl/">
-      Ionic Framework Team
-    </author>
+    OneGorilla
+  </author>
+
+  <plugin name="plugin.google.maps.menusito" spec="1.2.5" source="pgb" />
+
   <content src="index.html"/>
   <access origin="*"/>
   <preference name="webviewbounce" value="false"/>
