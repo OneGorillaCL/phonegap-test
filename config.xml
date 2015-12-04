@@ -8,7 +8,7 @@
     OneGorilla
   </author>
 
-  <plugin name="plugin.google.maps.menusito" spec="1.2.5" source="pgb" />
+  <gap:plugin name="plugin.google.maps.menusito" source="npm" />
 
   <content src="index.html"/>
   <access origin="*"/>
