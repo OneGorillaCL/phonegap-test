@@ -40,10 +40,10 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         controller: 'AppCtrlInicio'
       }
     }
-  });
+  })
 
   .state('app.inicio', {
-    url: '/home',
+    url: '/inicio',
     views: {
       'menuContent': {
         templateUrl: 'templates/inicio.html'
