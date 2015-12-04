@@ -8,7 +8,7 @@
     OneGorilla
   </author>
 
-  <gap:plugin name="cordova.plugin.googlemaps" source="npm" />
+  <gap:plugin name="cordova-plugin-googlemaps" source="npm" />
 
   <content src="index.html"/>
   <access origin="*"/>
