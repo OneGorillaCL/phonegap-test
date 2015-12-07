@@ -7,7 +7,7 @@ angular.module('starter.controllers', [])
 
 .controller('AppCtrlInicio', function($scope, $ionicLoading, $compile) {
 
-      function initialize() {
+      /*function initialize() {
         var myLatlng = new google.maps.LatLng(43.07493,-89.381388);
         
         var mapOptions = {
@@ -60,7 +60,19 @@ angular.module('starter.controllers', [])
       
       $scope.clickTest = function() {
         alert('Example of infowindow with ng-click')
-      };
+      };*/
+      var miDiv = document.getElementById("map");
+      console.log(miDiv);
+
+      var mapa = maps.Map.getMap(miDiv);
+
+      // You have to wait the MAP_READY event.
+        mapa.on(maps.event.MAP_READY, onMapInit);
+      });
+
+      function onMapInit() {
+        console.log("Mapa cargado");
+      }
 
 
 });

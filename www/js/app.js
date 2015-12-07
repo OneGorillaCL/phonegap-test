@@ -19,6 +19,10 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
+
+    // Initialize the map plugin
+    var maps = plugin.google.maps;
+    console.log(maps);
   });
 })
 
