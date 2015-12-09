@@ -67,8 +67,7 @@ angular.module('starter.controllers', [])
       var mapa = maps.Map.getMap(miDiv);
 
       // You have to wait the MAP_READY event.
-        mapa.on(maps.event.MAP_READY, onMapInit);
-      });
+      mapa.on(maps.event.MAP_READY, onMapInit);
 
       function onMapInit() {
         console.log("Mapa cargado");
