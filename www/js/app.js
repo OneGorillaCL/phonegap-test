@@ -21,8 +21,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     }
 
     // Initialize the map plugin
-    var maps = plugin.google.maps;
-    console.log(maps);
+    /*var maps = plugin.google.maps;
+    console.log(maps);*/
   });
 })
 

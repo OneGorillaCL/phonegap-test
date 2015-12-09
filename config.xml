@@ -12,8 +12,7 @@
   <gap:plugin name="cordova-plugin-googlemaps" source="npm">
     <param name="API_KEY_FOR_ANDROID" value="AIzaSyAkh1i9m60rM4k0j4Pc72Yxj1EvXjZcx3o" />
   </gap:plugin> -->
-  <preference name="android-build-tool" value="gradle"  /> 
-  <gap:plugin name="cordova-plugin-googlemaps" source="npm" version="1.3.7">
+  <gap:plugin name="cordova-plugin-googlemaps" source="npm">
       <param name="API_KEY_FOR_ANDROID" value="AIzaSyAkh1i9m60rM4k0j4Pc72Yxj1EvXjZcx3o" />
       <param name="API_KEY_FOR_IOS" value="123" />
   </gap:plugin>

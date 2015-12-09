@@ -64,10 +64,10 @@ angular.module('starter.controllers', [])
       var miDiv = document.getElementById("map");
       console.log(miDiv);
 
-      var mapa = maps.Map.getMap(miDiv);
+      var mapa = window.plugin.google.maps.Map.getMap(miDiv);
 
       // You have to wait the MAP_READY event.
-      mapa.on(maps.event.MAP_READY, onMapInit);
+      mapa.on(window.plugin.google.maps.event.MAP_READY, onMapInit);
 
       function onMapInit() {
         console.log("Mapa cargado");
