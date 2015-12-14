@@ -23,7 +23,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       StatusBar.styleDefault();
     }
 
-    var push = window.plugins.PushNotification.init({
+    var push = PushNotification.init({
         android: {
             senderID: "74198147019"
         },
