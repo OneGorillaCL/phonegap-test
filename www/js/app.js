@@ -23,7 +23,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       StatusBar.styleDefault();
     }
 
-    var push = PushNotification.init({
+    var push = window.plugins.PushNotification.init({
         android: {
             senderID: "74198147019"
         },
@@ -31,13 +31,15 @@ angular.module('starter', ['ionic', 'starter.controllers'])
             alert: "true",
             badge: "true",
             sound: "true"
-        },
-        windows: {}
+        }
     });
+
+    alert(push);
 
     push.on('registration', function(data) {
         // data.registrationId
         datareg = data;
+        alert(data.registrationId);
     });
 
     push.on('notification', function(data) {
