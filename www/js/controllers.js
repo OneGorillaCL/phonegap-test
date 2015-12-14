@@ -9,5 +9,9 @@ angular.module('starter.controllers', [])
 
   $scope.info = "Hola";
 
+  $scope.updateinfo = function(){
+  	$scope.info = JSON.stringify(datareg);
+  }
+
 });
 
