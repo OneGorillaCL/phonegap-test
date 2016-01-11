@@ -9,8 +9,8 @@
     </author>
   <gap:plugin name="com.phonegap.plugin.statusbar" />
   <gap:plugin name="com.ionic.keyboard" />
-  <plugin name="nl.madebymark.share" spec="0.1.1" source="pgb" />
-  
+  <gap:plugin name="nl.x-services.plugins.socialsharing" version="4.3.0" />
+
   <content src="index.html"/>
   <access origin="*"/>
   <preference name="webviewbounce" value="false"/>
