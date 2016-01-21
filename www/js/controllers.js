@@ -11,7 +11,7 @@ angular.module('starter.controllers', [])
 
 
   $scope.agregarNotifiacion = function(){
-  	window.plugins.notification.local.schedule({
+  	cordova.plugins.notification.local.schedule({
         id: 10,
         title: "OneGorilla!",
         text: "Todos somos Gorilla",
@@ -22,7 +22,7 @@ angular.module('starter.controllers', [])
   }
 
   $scope.eliminarNotificacion = function(){
-  	window.plugins.notification.local.cancel(10, function () {
+  	cordova.plugins.notification.local.cancel(10, function () {
 	     $scope.info = "Notificacion eliminada";
 	}, scope);
   }
