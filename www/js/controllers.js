@@ -11,6 +11,10 @@ angular.module('starter.controllers', [])
 
 
   $scope.agregarNotifiacion = function(){
+
+  	var now = new Date().getTime(),
+        _10_sec_from_now = new Date(now + 10 * 1000);
+
   	cordova.plugins.notification.local.schedule({
         id: 10,
         title: "OneGorilla!",
