@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <widget id="com.ionicframework.fbconnect149380" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:gap="http://phonegap.com/ns/1.0">
-  <name>Test 1G APP</name>
+  <name>Local notification</name>
   <description>
         Pruebas OneGorilla
     </description>
@@ -9,6 +9,8 @@
     </author>
   <gap:plugin name="com.phonegap.plugin.statusbar" />
   <gap:plugin name="com.ionic.keyboard" />
+  <plugin name="de.appplant.cordova.plugin.local-notification-ios9-fix" spec="0.8.2" source="pgb" />
+
   <content src="index.html"/>
   <access origin="*"/>
   <preference name="webviewbounce" value="false"/>
