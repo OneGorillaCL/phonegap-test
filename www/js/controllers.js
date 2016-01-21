@@ -28,7 +28,7 @@ angular.module('starter.controllers', [])
   $scope.eliminarNotificacion = function(){
   	cordova.plugins.notification.local.cancel(10, function () {
 	     $scope.info = "Notificacion eliminada";
-	}, scope);
+	});
   }
 
 });
