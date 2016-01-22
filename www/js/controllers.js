@@ -7,6 +7,12 @@ angular.module('starter.controllers', [])
 
 .controller('AppCtrlInicio', function($scope) {
 
+	
+
+  $scope.openurl = function(url){
+    window.open(url, '_system');
+  }
+
   $scope.info = "Hola";
 
   $scope.verVideo = function(){
