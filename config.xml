@@ -9,6 +9,7 @@
     </author>
   <gap:plugin name="com.phonegap.plugin.statusbar" />
   <gap:plugin name="com.ionic.keyboard" />
+  <plugin name="com.hutchind.cordova.plugins.streamingmedia" spec="0.1.3" source="pgb" />
   <content src="index.html"/>
   <access origin="*"/>
   <preference name="webviewbounce" value="false"/>
