@@ -16,7 +16,7 @@ angular.module('starter.controllers', [])
             $scope.info = "We got a barcode <br>" +
                 "Result: " + result.text + "<br>" +
                 "Format: " + result.format + "<br>" +
-                "Cancelled: " + result.cancelled);
+                "Cancelled: " + result.cancelled;
       }, 
       function (error) {
           	$scope.info = "Scanning failed: " + error;
