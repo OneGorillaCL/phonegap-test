@@ -1,18 +1,17 @@
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $timeout) {
+.controller('AppCtrl', function($scope, $timeout,  $cordovaCapture) {
 
 
       $scope.perc = "0";
 
-      /*var session = {
-        audio: true,
-        video: false
-      };
-      var recordRTC = null;
-      navigator.getUserMedia(session, initializeRecorder, onError);*/
-      navigator.device.capture.captureAudio(initializeRecorder, onError);
-      
+      $scope.capturar = function(){
+
+      	 var options = { limit: 100, duration: 100 };
+      	 $cordovaCapture.captureAudio(initializeRecorder, onError, options);
+
+
+      }
       
       function initializeRecorder(stream) {
         console.log(stream);
