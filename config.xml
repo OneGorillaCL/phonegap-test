@@ -9,6 +9,7 @@
     </author>
   <gap:plugin name="com.phonegap.plugin.statusbar" />
   <gap:plugin name="com.ionic.keyboard" />
+  
   <content src="index.html"/>
   <access origin="*"/>
   <preference name="webviewbounce" value="false"/>
