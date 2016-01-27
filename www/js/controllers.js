@@ -1,14 +1,19 @@
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $timeout,  $cordovaCapture) {
+.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
 
+
+})
+
+.controller('AppCtrlInicio', function($scope) {
 
       $scope.perc = "0";
 
       $scope.capturar = function(){
 
       	 var options = { limit: 100, duration: 100 };
-      	 $cordovaCapture.captureAudio(initializeRecorder, onError, options);
+      	 /*$cordovaCapture*/
+      	 navigator.device.capture.captureAudio(initializeRecorder, onError, options);
 
 
       }
@@ -49,4 +54,5 @@ angular.module('starter.controllers', [])
         //$("#perc").html(Math.round(rms_per));
       }
 
-})
+});
+
