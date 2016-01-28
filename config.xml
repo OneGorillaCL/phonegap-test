@@ -10,6 +10,7 @@
   <gap:plugin name="com.phonegap.plugin.statusbar" />
   <gap:plugin name="com.ionic.keyboard" />
   <gap:plugin name="cordova-plugin-media-capture" source="npm" />
+  <gap:plugin name="cordova-plugin-webrtc" source="npm" />
   <content src="index.html"/>
   <access origin="*"/>
   <preference name="webviewbounce" value="false"/>
