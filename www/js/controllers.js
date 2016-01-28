@@ -31,7 +31,7 @@ angular.module('starter.controllers', [])
 		  video: false
 		};
 		//var recordRTC = null;
-		navigator.getUserMedia(session, initializeRecorder, onError);
+		_navigator.getUserMedia(session, initializeRecorder, onError);
 
 
       }
