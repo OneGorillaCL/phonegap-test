@@ -35,7 +35,7 @@ angular.module('starter', ['ionic', 'starter.controllers','ngCordova'])
 
 
     $rootScope.initializeRecorder = function(stream) {
-        console.log(stream);
+        //console.log(stream);
         var audioContext = window.AudioContext;
         var context = new audioContext();
         var audioInput = context.createMediaStreamSource(stream);
@@ -64,7 +64,7 @@ angular.module('starter', ['ionic', 'starter.controllers','ngCordova'])
         while ( i < len ) total += Math.abs( input[i++] );
         rms = Math.sqrt( total / len );
         
-        console.log(( rms * 100 ));
+        //console.log(( rms * 100 ));
         var rou = Math.round(rms * 100);
         if(rou > $rootScope.maxperc){
           $rootScope.$apply(function(){$rootScope.maxperc = rou;});

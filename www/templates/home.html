@@ -1,9 +1,10 @@
 <ion-view view-title="Browse">
   <ion-content>
-    <h1>Titulo</h1>
+    <h1>OneGorilla Media Capture</h1>
 
+      <h1>Max: {{maxperc}}%</h1>
       <h1>{{perc}}%</h1>
-
+	  <progress max="100" value="{{perc}}"> </progress>
       <button ng-click="capturar()" class="button button-block button-positive">
         Capturar!
       </button>
