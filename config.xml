@@ -11,6 +11,7 @@
   <gap:plugin name="com.ionic.keyboard" />
   <gap:plugin name="cordova-plugin-media-capture" source="npm" />
   <gap:plugin name="cordova-plugin-webrtc" source="npm" />
+  <gap:plugin name="cordova-plugin-chrome-apps-audiocapture" source="npm" />
   <content src="index.html"/>
   <access origin="*"/>
   <preference name="webviewbounce" value="false"/>
