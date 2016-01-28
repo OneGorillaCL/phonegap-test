@@ -25,7 +25,10 @@ angular.module('starter', ['ionic', 'starter.controllers','ngCordova'])
       video: false
     };
 
-    $rootScope.perc = "0";
+    var recordRTC = null;
+
+    $rootScope.perc = 0;
+    $rootScope.maxperc = 0;
     $rootScope.capt = function(){
       navigator.getUserMedia(session, $rootScope.initializeRecorder, $rootScope.onErr);
     }
@@ -62,7 +65,11 @@ angular.module('starter', ['ionic', 'starter.controllers','ngCordova'])
         rms = Math.sqrt( total / len );
         
         console.log(( rms * 100 ));
-        $rootScope.perc = rms * 100;
+        var rou = Math.round(rms * 100);
+        if(rou > $rootScope.maxperc){
+          $rootScope.$apply(function(){$rootScope.maxperc = rou;});
+        }
+        $rootScope.$apply(function(){$rootScope.perc = rou;});
         //("#barra").css({"width":rms_per+"%"});
         //$("#perc").html(Math.round(rms_per));
       }
@@ -82,6 +89,7 @@ angular.module('starter', ['ionic', 'starter.controllers','ngCordova'])
 
   .state('app.home', {
     url: '/home',
+    cache: false,
     views: {
       'menuContent': {
         templateUrl: 'templates/home.html',
