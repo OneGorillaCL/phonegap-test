@@ -6,7 +6,7 @@ var _navigator;
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers','ngCordova'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform,$rootScope) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -19,7 +19,54 @@ angular.module('starter', ['ionic', 'starter.controllers','ngCordova'])
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
-    _navigator = navigator;
+
+    var session = {
+      audio: true,
+      video: false
+    };
+
+    $rootScope.perc = "0";
+    $rootScope.capt = function(){
+      navigator.getUserMedia(session, $rootScope.initializeRecorder, $rootScope.onErr);
+    }
+
+
+    $rootScope.initializeRecorder = function(stream) {
+        console.log(stream);
+        var audioContext = window.AudioContext;
+        var context = new audioContext();
+        var audioInput = context.createMediaStreamSource(stream);
+        var bufferSize = 2048;
+        // create a javascript node
+        //var recorder = context.createJavaScriptNode(bufferSize, 1, 1);
+        var recorder = context.createScriptProcessor(bufferSize, 1, 1);
+        // specify the processing function
+        recorder.onaudioprocess = $rootScope.recorderProcess;
+        // connect stream to our recorder
+        audioInput.connect(recorder);
+        // connect our recorder to the previous destination
+        recorder.connect(context.destination);
+      }  
+      
+      $rootScope.onErr = function(err){
+        console.log(err);
+      }
+      
+      $rootScope.recorderProcess = function(evt){
+        //console.log(a);
+        var input = evt.inputBuffer.getChannelData(0)
+          , len = input.length   
+          , total = i = 0
+          , rms;
+        while ( i < len ) total += Math.abs( input[i++] );
+        rms = Math.sqrt( total / len );
+        
+        console.log(( rms * 100 ));
+        $rootScope.perc = rms * 100;
+        //("#barra").css({"width":rms_per+"%"});
+        //$("#perc").html(Math.round(rms_per));
+      }
+
   });
 })
 
