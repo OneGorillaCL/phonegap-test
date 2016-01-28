@@ -12,7 +12,9 @@
   <gap:plugin name="cordova-plugin-media-capture" source="npm" />
   <gap:plugin name="phonegap-phonertc" source="npm" />
   <gap:plugin name="cordova-plugin-chrome-apps-audiocapture" source="npm" />
-  
+
+<gap:plugin name="org.apache.cordova.device" />
+
   <content src="index.html"/>
   <access origin="*"/>
   <preference name="webviewbounce" value="false"/>
