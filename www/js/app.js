@@ -29,9 +29,9 @@ angular.module('starter', ['ionic', 'starter.controllers','ngCordova'])
 
     $rootScope.perc = 0;
     $rootScope.maxperc = 0;
-    $rootScope.divlog = "";
+    $rootScope.divlog = JSON.stringify(navigator.getUserMedia);
+    $rootScope.divlog2 = JSON.stringify(navigator.webkitGetUserMedia);
     $rootScope.capt = function(){
-      $rootScope.divlog = JSON.stringify(navigator);
       navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
       navigator.getUserMedia(session, $rootScope.initializeRecorder, $rootScope.onErr);
     }
