@@ -5,7 +5,7 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('AppCtrlInicio', function($scope, $cordovaCamera) {
+.controller('AppCtrlInicio', function($scope) {
 
   $scope.info = "Hola";
 
@@ -24,16 +24,19 @@ angular.module('starter.controllers', [])
 	  correctOrientation:true
     };
 
-    $cordovaCamera.getPicture(options).then(function(imageData) {
-      var image = document.getElementById('myImage');
-      image.src = "data:image/jpeg;base64," + imageData;
-    }, function(err) {
-      // error
-      $scope.info = err;
-      $scope.$digest();
-    });
-  	
+    navigator.camera.getPicture(onSuccess, onFail, options);
+
   }
+
+	onSuccess = function(imageURI) {
+	    var image = document.getElementById('myImage');
+	    image.src = imageURI;
+	}
+
+	onFail = function(message) {
+	  $scope.info = message;
+	  $scope.$digest();
+	}
 
 });
 
