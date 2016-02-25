@@ -28,9 +28,9 @@ angular.module('starter.controllers', [])
 
   }
 
-	onSuccess = function(imageURI) {
+	onSuccess = function(imageData) {
 	    var image = document.getElementById('myImage');
-	    image.src = imageURI;
+	    image.src = "data:image/jpeg;base64," + imageData;
 	}
 
 	onFail = function(message) {
