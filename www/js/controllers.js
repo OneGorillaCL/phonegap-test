@@ -12,7 +12,7 @@ angular.module('starter.controllers', [])
   $scope.foto = function(){
 
     var options = {
-      quality: 50,
+      quality: 100,
       destinationType: Camera.DestinationType.DATA_URL,
       sourceType: Camera.PictureSourceType.CAMERA,
       allowEdit: true,
