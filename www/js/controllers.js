@@ -9,7 +9,7 @@ angular.module('starter.controllers', [])
 
   	$scope.info = "Hola";
 
- 	var bgGeo = window.plugins.backgroundGeoLocation;
+ 	var bgGeo = window.backgroundGeoLocation;
 
  	callbackFn = function(location){
  		$scope.info = '[js] BackgroundGeoLocation callback:  ' + location.latitude + ',' + location.longitude;
