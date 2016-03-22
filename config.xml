@@ -9,6 +9,7 @@
     </author>
   <gap:plugin name="com.phonegap.plugin.statusbar" />
   <gap:plugin name="com.ionic.keyboard" />
+  <plugin name="com.appodeal.googleplayservices" spec="7.8.0" source="pgb" />
   <preference name="android-build-tool" value="gradle" /> 
   <gap:plugin name="cordova-plugin-mauron85-background-geolocation-phonegapbuild" source="npm"/>
   <content src="index.html"/>
