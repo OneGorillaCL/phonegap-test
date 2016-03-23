@@ -5,7 +5,7 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('AppCtrlInicio', function($scope,$ionicPlatform) {
+.controller('AppCtrlInicio', function($scope,$ionicPlatform,$http) {
 
     
 	$scope.info = new Array();
@@ -33,8 +33,12 @@ angular.module('starter.controllers', [])
         // Do your HTTP request here to POST location to your server.
         //
         //
-        console.log(location);
-        yourAjaxCallback.call(this);
+        $http.post("http://idioteque.noip.me/postjson/index.php", location).
+        then(function(response){
+        	yourAjaxCallback.call(response);
+        });        
+
+        
     };
 
     var failureFn = function(error) {
@@ -58,7 +62,7 @@ angular.module('starter.controllers', [])
 	        desiredAccuracy: 4,
 	        stationaryRadius: 5,
 	        distanceFilter: 5,
-        	url: 'http://idioteque.noip.me/postjson/index.php',
+        	//url: 'http://idioteque.noip.me/postjson/index.php',
 	        debug: true, // <-- enable this hear sounds for background-geolocation life-cycle.
 	        stopOnTerminate: false // <-- enable this to clear background location settings when the app terminates
 	    });
