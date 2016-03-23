@@ -51,27 +51,39 @@ angular.module('starter.controllers', [])
 	    //  in order to prompt the user for Location permission.
 	    window.navigator.geolocation.getCurrentPosition(function(location) {
 	        $scope.info.push('Location from Phonegap');
+            $scope.info.push(location.coords.latitude + "," + location.coords.longitude);
 	    });
 
-	    var bgGeo = window.plugins.backgroundGeoLocation;
 
-	    // BackgroundGeoLocation is highly configurable.
-	    bgGeo.configure(callbackFn, failureFn, {
-	        desiredAccuracy: 4,
-	        stationaryRadius: 5,
-	        distanceFilter: 5,
-        	//url: 'http://idioteque.noip.me/postjson/index.php',
-	        debug: true, // <-- enable this hear sounds for background-geolocation life-cycle.
-	        stopOnTerminate: false // <-- enable this to clear background location settings when the app terminates
-	    });
+        var bgGeo = window.plugins.backgroundGeoLocation;
 
-	    // Turn ON the background-geolocation system.  The user will be tracked whenever they suspend the app.
-	    bgGeo.start();
+        // BackgroundGeoLocation is highly configurable.
+        bgGeo.configure(callbackFn, failureFn, {
+            desiredAccuracy: 4,
+            stationaryRadius: 5,
+            distanceFilter: 5,
+            //url: 'http://idioteque.noip.me/postjson/index.php',
+            debug: true, // <-- enable this hear sounds for background-geolocation life-cycle.
+            stopOnTerminate: false // <-- enable this to clear background location settings when the app terminates
+        });
 
-	    // If you wish to turn OFF background-tracking, call the #stop method.
-	    // bgGeo.stop()
+        // Turn ON the background-geolocation system.  The user will be tracked whenever they suspend the app.
+        bgGeo.start();
 
-    });    	
+        // If you wish to turn OFF background-tracking, call the #stop method.
+        // bgGeo.stop()
+
+    });  
+
+    $ionicPlatform.on('resume', function(event) {
+        // check event, do some database work, etc.
+        window.navigator.geolocation.getCurrentPosition(function(location) {
+            $scope.info.push('Location from resume');
+            $scope.info.push(location.coords.latitude + "," + location.coords.longitude);
+            console.log('Location from resume');
+            console.log(location);
+        });
+    });
 
 });
 
