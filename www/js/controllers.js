@@ -78,7 +78,12 @@ angular.module('starter.controllers', [])
 
 	//ngCordova  
 	var options = {
-    // https://github.com/christocracy/cordova-plugin-background-geolocation#config
+            desiredAccuracy: 4,
+            stationaryRadius: 5,
+            distanceFilter: 5,
+            //url: 'http://idioteque.noip.me/postjson/index.php',
+            debug: true, // <-- enable this hear sounds for background-geolocation life-cycle.
+            stopOnTerminate: false // <-- enable this to clear background location settings when the app terminates
   	};
 	    // `configure` calls `start` internally
 	    $cordovaBackgroundGeolocation.configure(options)
