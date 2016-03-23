@@ -5,7 +5,7 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('AppCtrlInicio', function($scope,$ionicPlatform,$http) {
+.controller('AppCtrlInicio', function($scope,$ionicPlatform,$http,$cordovaBackgroundGeolocation) {
 
     
 	$scope.info = new Array();
@@ -35,7 +35,7 @@ angular.module('starter.controllers', [])
         //
         $http.post("http://idioteque.noip.me/postjson/index.php", location).
         then(function(response){
-        	yourAjaxCallback.call(response);
+        	yourAjaxCallback.call(this);
         });        
 
         
@@ -49,6 +49,7 @@ angular.module('starter.controllers', [])
 
     $ionicPlatform.ready(function() {
 
+    /*
 	    // Your app must execute AT LEAST ONE call for the current position via standard Cordova geolocation,
 	    //  in order to prompt the user for Location permission.
 	    window.navigator.geolocation.getCurrentPosition(function(location) {
@@ -72,6 +73,28 @@ angular.module('starter.controllers', [])
 
 	    // If you wish to turn OFF background-tracking, call the #stop method.
 	    // bgGeo.stop()
+
+	*/
+
+	//ngCordova  
+	var options = {
+    // https://github.com/christocracy/cordova-plugin-background-geolocation#config
+  	};
+	    // `configure` calls `start` internally
+	    $cordovaBackgroundGeolocation.configure(options)
+	    .then(
+	      null, // Background never resolves
+	      function (err) { // error callback
+	        console.error(err);
+	      },
+	      function (location) { // notify callback
+	        console.log(location);
+	      });
+
+
+	    $scope.stopBackgroundGeolocation = function () {
+	      $cordovaBackgroundGeolocation.stop();
+	    };
 
     });
 
