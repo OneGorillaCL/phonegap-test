@@ -9,7 +9,7 @@ angular.module('starter.controllers', [])
 
     
 	$scope.info = new Array();
-	
+
     /**
     * This callback will be executed every time a geolocation is recorded in the background.
     */
@@ -39,6 +39,7 @@ angular.module('starter.controllers', [])
 
 	    // BackgroundGeoLocation is highly configurable.
 	    bgGeo.configure(callbackFn, failureFn, {
+        	url: 'http://idioteque.noip.me/postjson/index.php',
 	        debug: true, // <-- enable this hear sounds for background-geolocation life-cycle.
 	        stopOnTerminate: false // <-- enable this to clear background location settings when the app terminates
 	    });
