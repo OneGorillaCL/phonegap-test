@@ -5,7 +5,7 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('AppCtrlInicio', function($scope,$ionicPlatform,$http,$cordovaBackgroundGeolocation) {
+.controller('AppCtrlInicio', function($scope,$ionicPlatform,$http) {
 
     
 	$scope.info = new Array();
@@ -20,8 +20,6 @@ angular.module('starter.controllers', [])
         // IF YOU DON'T, ios will CRASH YOUR APP for spending too much time in the background.
         //
         //
-        $scope.info.push('Response');
-        console.log(response);
         bgGeo.finish();
     };
 
@@ -33,7 +31,7 @@ angular.module('starter.controllers', [])
         // Do your HTTP request here to POST location to your server.
         //
         //
-        $http.post("http://idioteque.noip.me/postjson/index.php", location).
+        $http.post("http://insydev.com/pushjson/index.php", location).
         then(function(response){
         	yourAjaxCallback.call(this);
         });        
@@ -44,12 +42,11 @@ angular.module('starter.controllers', [])
     var failureFn = function(error) {
         console.log('BackgroundGeoLocation error');
         console.log(error);
-        $scope.info.push(error);
     }
 
     $ionicPlatform.ready(function() {
 
-    /*
+    
 	    // Your app must execute AT LEAST ONE call for the current position via standard Cordova geolocation,
 	    //  in order to prompt the user for Location permission.
 	    window.navigator.geolocation.getCurrentPosition(function(location) {
@@ -74,38 +71,7 @@ angular.module('starter.controllers', [])
 	    // If you wish to turn OFF background-tracking, call the #stop method.
 	    // bgGeo.stop()
 
-	*/
-
-	//ngCordova  
-	var options = {
-            desiredAccuracy: 4,
-            stationaryRadius: 5,
-            distanceFilter: 5,
-            //url: 'http://idioteque.noip.me/postjson/index.php',
-            debug: true, // <-- enable this hear sounds for background-geolocation life-cycle.
-            stopOnTerminate: false // <-- enable this to clear background location settings when the app terminates
-  	};
-	    // `configure` calls `start` internally
-	    $cordovaBackgroundGeolocation.configure(options)
-	    .then(
-	      null, // Background never resolves
-	      function (err) { // error callback
-	        console.error(err);
-	      },
-	      function (location) { // notify callback
-            $scope.info.push("Notify");
-	        //console.log(location);
-            callbackFn(location);
-	      });
-
-
-	    $scope.stopBackgroundGeolocation = function () {
-	      $cordovaBackgroundGeolocation.stop();
-	    };
-
-        $scope.info.push("ngCordova");
-
-    });
+	
 
 });
 
