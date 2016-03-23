@@ -71,7 +71,7 @@ angular.module('starter.controllers', [])
 	    // If you wish to turn OFF background-tracking, call the #stop method.
 	    // bgGeo.stop()
 
-	
+    });    	
 
 });
 
