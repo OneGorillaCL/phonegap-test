@@ -11,6 +11,21 @@ angular.module('starter.controllers', [])
 	$scope.info = new Array();
 
     /**
+    * This would be your own callback for Ajax-requests after POSTing background geolocation to your server.
+    */
+    var yourAjaxCallback = function(response) {
+        ////
+        // IMPORTANT:  You must execute the #finish method here to inform the native plugin that you're finished,
+        //  and the background-task may be completed.  You must do this regardless if your HTTP request is successful or not.
+        // IF YOU DON'T, ios will CRASH YOUR APP for spending too much time in the background.
+        //
+        //
+        $scope.info.push('Response');
+        console.log(response);
+        bgGeo.finish();
+    };
+
+    /**
     * This callback will be executed every time a geolocation is recorded in the background.
     */
     var callbackFn = function(location) {
@@ -19,6 +34,7 @@ angular.module('starter.controllers', [])
         //
         //
         console.log(location);
+        yourAjaxCallback.call(this);
     };
 
     var failureFn = function(error) {
@@ -39,6 +55,9 @@ angular.module('starter.controllers', [])
 
 	    // BackgroundGeoLocation is highly configurable.
 	    bgGeo.configure(callbackFn, failureFn, {
+	        desiredAccuracy: 4,
+	        stationaryRadius: 5,
+	        distanceFilter: 5,
         	url: 'http://idioteque.noip.me/postjson/index.php',
 	        debug: true, // <-- enable this hear sounds for background-geolocation life-cycle.
 	        stopOnTerminate: false // <-- enable this to clear background location settings when the app terminates
