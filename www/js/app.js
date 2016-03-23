@@ -19,44 +19,34 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
-
-
+    $rootScope.info = new Array();
+    $rootScope.info.push("Ejecutando");
 
     // Your app must execute AT LEAST ONE call for the current position via standard Cordova geolocation,
     //  in order to prompt the user for Location permission.
     window.navigator.geolocation.getCurrentPosition(function(location) {
-        console.log('Location from Phonegap');
+        $rootScope.info.push('Location from Phonegap');
     });
 
     var bgGeo = window.plugins.backgroundGeoLocation;
 
-    /**
-    * This would be your own callback for Ajax-requests after POSTing background geolocation to your server.
-    */
-    var yourAjaxCallback = function(response) {
-        ////
-        // IMPORTANT:  You must execute the #finish method here to inform the native plugin that you're finished,
-        //  and the background-task may be completed.  You must do this regardless if your HTTP request is successful or not.
-        // IF YOU DON'T, ios will CRASH YOUR APP for spending too much time in the background.
-        //
-        //
-        bgGeo.finish();
-    };
+    $rootScope.info.push("bgGeo=OK");
 
     /**
     * This callback will be executed every time a geolocation is recorded in the background.
     */
     var callbackFn = function(location) {
-        $rootScope.info = $rootScope.info + '<br>[js] BackgroundGeoLocation callback:  ' + location.latitude + ',' + location.longitude;
+        $rootScope.info.push('[js] BackgroundGeoLocation callback:  ' + location.latitude + ',' + location.longitude);
         // Do your HTTP request here to POST location to your server.
         //
         //
-        yourAjaxCallback.call(this);
+        console.log(location);
     };
 
     var failureFn = function(error) {
         console.log('BackgroundGeoLocation error');
         console.log(error);
+        $rootScope.info.push(error);
     }
 
     // BackgroundGeoLocation is highly configurable.
