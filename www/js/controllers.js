@@ -88,13 +88,17 @@ angular.module('starter.controllers', [])
 	        console.error(err);
 	      },
 	      function (location) { // notify callback
-	        console.log(location);
+            $scope.info.push("Notify");
+	        //console.log(location);
+            callbackFn(location);
 	      });
 
 
 	    $scope.stopBackgroundGeolocation = function () {
 	      $cordovaBackgroundGeolocation.stop();
 	    };
+
+        $scope.info.push("ngCordova");
 
     });
 
