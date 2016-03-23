@@ -85,5 +85,15 @@ angular.module('starter.controllers', [])
         });
     });
 
+    $ionicPlatform.on('pause', function(event) {
+        // check event, do some database work, etc.
+        window.navigator.geolocation.getCurrentPosition(function(location) {
+            $scope.info.push('Location from pause');
+            $scope.info.push(location.coords.latitude + "," + location.coords.longitude);
+            console.log('Location from pause');
+            console.log(location);
+        });
+    });
+
 });
 
