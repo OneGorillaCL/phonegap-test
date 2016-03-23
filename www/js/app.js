@@ -82,7 +82,17 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         controller: 'AppCtrlInicio'
       }
     }
+  })
+
+  .state('app.detalle', {
+    url: '/detalle',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/detalle.html'
+      }
+    }
   });
+
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/home');
 });
