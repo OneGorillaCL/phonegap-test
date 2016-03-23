@@ -9,10 +9,12 @@
     </author>
   <gap:plugin name="com.phonegap.plugin.statusbar" />
   <gap:plugin name="com.ionic.keyboard" />
-  <!--<preference name="android-build-tool" value="gradle" /> 
+  
+  <preference name="android-build-tool" value="gradle" /> 
   <plugin name="org.apache.cordova.dialogs" spec="0.2.10" source="pgb" />
   <plugin name="org.apache.cordova.geolocation" spec="0.3.10" source="pgb" />
-  <plugin name="org.transistorsoft.cordova.background-geolocation" spec="0.3.5" source="pgb" />-->
+  <plugin name="org.transistorsoft.cordova.background-geolocation" spec="0.3.5" source="pgb" />
+  
   <content src="index.html"/>
   <access origin="*"/>
   <preference name="webviewbounce" value="false"/>
