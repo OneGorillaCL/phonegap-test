@@ -9,5 +9,9 @@ angular.module('starter.controllers', [])
 
   $scope.info = "Hola";
 
+  bluetoothSerial.setDeviceDiscoveredListener(function(device) {
+    console.log('Found: '+device.id);
+  });
+
 });
 
